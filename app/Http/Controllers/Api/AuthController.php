@@ -107,6 +107,7 @@ class AuthController extends Controller
     }
 
 
+
     public function reset(Request $request)
     {
         $request->validate([
@@ -123,6 +124,7 @@ class AuthController extends Controller
             $user->save();
         });
 
+        
         if ($status === Password::PASSWORD_RESET) {
             return response()->json([
                 'message' => 'Password reset successfully', 'status' => Response::HTTP_OK
